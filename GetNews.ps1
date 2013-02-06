@@ -23,7 +23,7 @@ function lineparser($line){
     $lastline = $line.TrimStart($spline[0] + ": ").TrimEnd("</a>")
     $lastsplit=$lastline.Split('(')
     $resnum = [System.Int32]::Parse($lastsplit[$lastsplit.Length-1].Split(')')[0])
-    $fin = $lastline.Substring(0, $lastline.Length - $lastsplit[$lastsplit.Length -1].Length -3)
+    $fin = $lastline.Substring(0, $lastline.Length - $lastsplit[$lastsplit.Length -1].Length -2)
     $content=""
     for($i=1; $i -lt $spline.Length - 1; $i++){
         $content += $spline[$i]
